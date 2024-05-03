@@ -1,0 +1,42 @@
+.nav {
+
+  .sub-title {
+    color: #787f8d;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0px;
+    flex-wrap: wrap;
+  }
+
+  .links {
+    gap: 10px;
+
+    .btn-item {
+      background: white;
+      border: 1px solid gray;
+      text-transform: capitalize;
+      transition: 0.3s;
+    }
+
+    .btn-item:hover,
+    .active {
+      background: #000;
+      color: white;
+    }
+
+  }
+
+}
+
+.card {
+  border: none;
+  margin: 18px 0px;
+  transition: 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+  }
+}

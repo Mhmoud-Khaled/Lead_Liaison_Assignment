@@ -1,1 +1,28 @@
-<p>nav bar is working</p>
+<div class="row nav align-items-center">
+  <div class="col-md-4 col-sm-12">
+    <h3>Shop By {{navTitle | titlecase}}</h3>
+    <p class="sub-title">Discover the perfect products for your needs.</p>
+  </div>
+  <div class="col-md-8 col-sm-12 ">
+    <ul class="links d-flex">
+      <ng-container *ngFor="let item of navButtons">
+        <li class="flex-fill text-center btn btn-item" routerLinkActive="active" routerLink={{item}}
+          (click)="ChangeTitleName(item)">
+          {{item}}
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</div>
+
+<div class="row text-center my-5" *ngIf="showAllCategory">
+  <div class="col-lg-4 col-md-6" *ngFor="let item of navButtons">
+    <div class="card" style="width: 100%;" (click)="navigateToCategory(item)">
+      <img src="https://dummyimage.com/200.png/#eaeaea/fff" class="card-img-top card-img-bottom" alt="...">
+      <div class="card-body text-start">
+        <h5 class="card-title">{{item | titlecase}}</h5>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In consectetur repellendus.</p>
+      </div>
+    </div>
+  </div>
+</div>

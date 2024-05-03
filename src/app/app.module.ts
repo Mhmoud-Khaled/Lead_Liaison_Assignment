@@ -10,26 +10,28 @@ import { FooterComponent } from './footer/footer.component';
 import { NavBarComponent } from './home/nav-bar/nav-bar.component';
 import { CardsComponent } from './home/cards/cards.component';
 import { CardDetailsComponent } from './home/card-details/card-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HeaderComponent,
-        FooterComponent,
-        HomeComponent,
-        NavBarComponent,
-        CardsComponent,
-        CardDetailsComponent
-    ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-    ],
-    providers: [
-        provideAnimationsAsync()
-    ],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    NavBarComponent,
+    CardsComponent,
+    CardDetailsComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
+  providers: [
+    provideAnimationsAsync()
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
