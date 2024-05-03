@@ -1,6 +1,6 @@
-<div class="row nav align-items-center">
+<div class="row nav align-items-center" *ngIf="!showSpinner">
   <div class="col-md-4 col-sm-12">
-    <h3>Shop By {{navTitle | titlecase}}</h3>
+    <h4>Shop By {{navTitle | titlecase}}</h4>
     <p class="sub-title">Discover the perfect products for your needs.</p>
   </div>
   <div class="col-md-8 col-sm-12 ">
@@ -24,5 +24,11 @@
         <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In consectetur repellendus.</p>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="spinner" *ngIf="showSpinner">
+  <div class="spinner-box">
+    <span class="loader"></span>
   </div>
 </div>

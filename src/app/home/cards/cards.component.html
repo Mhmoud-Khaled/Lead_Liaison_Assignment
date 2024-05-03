@@ -1,4 +1,4 @@
-<div class="products my-5">
+<div class="products my-5" *ngIf="!showSpinner">
   <div class="row">
     <div class="col-md-4 col-sm-6 col-12" *ngFor="let product of products, let index = index">
       <div class="card my-3" style="width: 100%;" (click)="navigateToProductDetails(product.id)">

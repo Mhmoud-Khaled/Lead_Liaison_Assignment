@@ -15,6 +15,7 @@ export class NavBarComponent implements OnInit {
 
   navButtons: string[] = []
   showAllCategory: boolean = true
+  showSpinner: boolean = true
   URLSubscription!: Subscription;
 
   constructor(
@@ -40,10 +41,12 @@ export class NavBarComponent implements OnInit {
   }
 
   GetAllCategories() {
+    this.showSpinner = true
     let httpEndPoints = HttpEndPoints.store.GetAllCattegories
     this.HttpClient.get(httpEndPoints).subscribe(
       (response: any) => {
         this.navButtons = response
+        this.showSpinner = false
       },
       (error: any) => {
         this.showAllCategory = false
@@ -58,7 +61,6 @@ export class NavBarComponent implements OnInit {
 
   getCurrentUrl() {
     const currentUrl = this.router.url;
-    console.log('Current URL:', currentUrl);
     if (this.router.url === '/category') {
       this.showAllCategory = true
       this.navTitle = 'category'
