@@ -1,1 +1,29 @@
-<p>card-details is working</p>
+<div class="details my-5" *ngIf="!showSpinner">
+  <div class="row">
+    <div class="col-sm-4 col-12">
+      <img class="img-fluid w-100" [src]="product.image" alt="">
+    </div>
+    <div class="col-sm-8 col-12">
+      <div class="title">
+        <h5 class="name">{{product.title}}</h5>
+        <h6 class="category">{{product.category | titlecase}}</h6>
+      </div>
+      <div class="price-rate d-flex justify-content-between">
+        <h6 class="price">Price: <span>{{product.price | currency}}</span></h6>
+        <div class="rate d-flex">
+          <i class="fa fa-star" aria-hidden="true" *ngFor="let star of rate"></i>
+        </div>
+      </div>
+      <hr>
+      <div class="description">
+        {{product.description}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="spinner" *ngIf="showSpinner">
+  <div class="spinner-box">
+    <span class="loader"></span>
+  </div>
+</div>

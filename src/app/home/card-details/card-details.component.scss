@@ -1,0 +1,22 @@
+@import '../home.component.scss';
+
+
+.details {
+  .row {
+    .title {
+      .category {
+        color: #d20000;
+      }
+    }
+
+    .price-rate {
+      .price>span {
+        font-weight: 200;
+      }
+
+      .rate>i {
+        color: gold;
+      }
+    }
+  }
+}
