@@ -29,7 +29,6 @@ export class NavBarComponent implements OnInit {
     this.URLSubscription = this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
         if (this.router.url === '/category') {
-          console.log('oninit  true');
           this.showAllCategory = true
           this.navTitle = 'category'
         } else {
