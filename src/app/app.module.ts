@@ -12,7 +12,7 @@ import { CardsComponent } from './home/cards/cards.component';
 import { CardDetailsComponent } from './home/card-details/card-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorPageComponent } from './error-page/error-page.component';
-
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -29,7 +29,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
     provideAnimationsAsync()

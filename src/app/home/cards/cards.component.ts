@@ -3,6 +3,7 @@ import { HttpEndPoints } from '../../settings/HttpEndPoints';
 import { HttpClient } from '@angular/common/http';
 import { iProduct } from '../../settings/dataModel'
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
@@ -18,7 +19,8 @@ export class CardsComponent implements OnInit {
   constructor(
     private HttpClient: HttpClient,
     private ActivatedRoute: ActivatedRoute,
-    private Router: Router
+    private Router: Router,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -49,7 +51,7 @@ export class CardsComponent implements OnInit {
         this.showSpinner = false
       },
       (error: any) => {
-        console.log(error)
+        this.toastr.error(error);
       }
     )
   }
@@ -61,5 +63,6 @@ export class CardsComponent implements OnInit {
     // Navigate to the product details page with the updated URL
     this.Router.navigate(['/category', subCategory, productId]);
   }
+
 
 }

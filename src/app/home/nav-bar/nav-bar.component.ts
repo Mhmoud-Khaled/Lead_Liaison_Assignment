@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpEndPoints } from '../../settings/HttpEndPoints';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -21,7 +21,7 @@ export class NavBarComponent implements OnInit {
   constructor(
     private HttpClient: HttpClient,
     private router: Router,
-    private ActivatedRoute: ActivatedRoute,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -49,6 +49,7 @@ export class NavBarComponent implements OnInit {
         this.showSpinner = false
       },
       (error: any) => {
+        this.toastr.error(error);
         this.showAllCategory = false
       }
     )
@@ -69,4 +70,9 @@ export class NavBarComponent implements OnInit {
     }
   }
 
+  ngOnDestroy() {
+    if (this.URLSubscription) {
+      this.URLSubscription.unsubscribe();
+    }
+  }
 }

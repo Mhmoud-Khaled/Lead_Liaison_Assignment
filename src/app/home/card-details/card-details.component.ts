@@ -3,7 +3,7 @@ import { iProduct } from '../../settings/dataModel';
 import { ActivatedRoute } from '@angular/router';
 import { HttpEndPoints } from '../../settings/HttpEndPoints';
 import { HttpClient } from '@angular/common/http';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-card-details',
   templateUrl: './card-details.component.html',
@@ -18,7 +18,8 @@ export class CardDetailsComponent implements OnInit {
 
   constructor(
     private ActivatedRoute: ActivatedRoute,
-    private HttpClient: HttpClient
+    private HttpClient: HttpClient,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -46,7 +47,7 @@ export class CardDetailsComponent implements OnInit {
         this.showSpinner = false
       },
       (error: any) => {
-        console.log(error)
+        this.toastr.error(error);
       }
     )
   }
