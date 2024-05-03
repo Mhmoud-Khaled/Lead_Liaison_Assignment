@@ -7,7 +7,7 @@
     <ul class="links d-flex">
       <ng-container *ngFor="let item of navButtons">
         <li class="flex-fill text-center btn btn-item" routerLinkActive="active" routerLink={{item}}
-          (click)="ChangeTitleName(item)">
+          (click)="navigateToCategory(item)">
           {{item}}
         </li>
       </ng-container>
