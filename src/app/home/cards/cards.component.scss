@@ -1,0 +1,48 @@
+@import '../home.component.scss';
+
+.products {
+
+  .card {
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    .card-body {
+      .title {
+        .name {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          /* Limit to 3 lines */
+          -webkit-line-clamp: 1;
+        }
+
+        .category {
+          color: #d20000;
+        }
+      }
+
+      .card-text {
+        font-size: 14px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        /* Limit to 3 lines */
+        -webkit-line-clamp: 3;
+      }
+    }
+
+    .card-footer {
+      .price>span {
+        font-weight: 200;
+      }
+
+      .fa-star {
+        color: gold;
+      }
+    }
+  }
+}

@@ -1,1 +1,27 @@
-<p>cards is working</p>
+<div class="products my-5">
+  <div class="row">
+    <div class="col-md-4 col-sm-6 col-12" *ngFor="let product of products, let index = index">
+      <div class="card my-3" style="width: 100%;" (click)="navigateToProductDetails(product.id)">
+        <img [src]="product.image" style="height: 200px;" class="card-img-top img-fluid" alt="...">
+        <div class="card-body">
+          <div class="title">
+            <h6 class="card-title name">{{product.title}}</h6>
+            <h6 class="category">{{product.category | titlecase}}</h6>
+          </div>
+          <p class="card-text">{{product.description}}</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <h6 class="price">Price: <span>{{product.price | currency}}</span></h6>
+          <div class="icon d-flex">
+            <i class="fa fa-star" aria-hidden="true" *ngFor="let _ of rate[index]"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="spinner" *ngIf="showSpinner">
+  <div class="spinner-box">
+    <span class="loader"></span>
+  </div>
+</div>
