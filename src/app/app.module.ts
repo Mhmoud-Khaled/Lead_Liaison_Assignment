@@ -11,6 +11,7 @@ import { NavBarComponent } from './home/nav-bar/nav-bar.component';
 import { CardsComponent } from './home/cards/cards.component';
 import { CardDetailsComponent } from './home/card-details/card-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     NavBarComponent,
     CardsComponent,
-    CardDetailsComponent
+    CardDetailsComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
