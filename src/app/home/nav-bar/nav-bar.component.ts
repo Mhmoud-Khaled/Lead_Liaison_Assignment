@@ -14,7 +14,7 @@ export class NavBarComponent implements OnInit {
   navTitle: string = 'category'
 
   navButtons: string[] = []
-  showAllCategory!: boolean
+  showAllCategory: boolean = true
   URLSubscription!: Subscription;
 
   constructor(
@@ -26,6 +26,7 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
 
     this.GetAllCategories()
+    this.getCurrentUrl()
     this.URLSubscription = this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
         if (this.router.url === '/category') {
@@ -53,6 +54,17 @@ export class NavBarComponent implements OnInit {
   navigateToCategory(category: string) {
     this.router.navigate(['/category', category])
     this.navTitle = category
+  }
+
+  getCurrentUrl() {
+    const currentUrl = this.router.url;
+    console.log('Current URL:', currentUrl);
+    if (this.router.url === '/category') {
+      this.showAllCategory = true
+      this.navTitle = 'category'
+    } else {
+      this.showAllCategory = false
+    }
   }
 
 }
