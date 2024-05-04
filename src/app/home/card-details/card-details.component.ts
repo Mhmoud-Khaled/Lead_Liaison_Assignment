@@ -47,7 +47,7 @@ export class CardDetailsComponent implements OnInit {
         this.showSpinner = false
       },
       (error: any) => {
-        this.toastr.error(error);
+        this.toastr.error(error.message);
       }
     )
   }

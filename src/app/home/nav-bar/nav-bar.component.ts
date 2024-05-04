@@ -49,7 +49,7 @@ export class NavBarComponent implements OnInit {
         this.showSpinner = false
       },
       (error: any) => {
-        this.toastr.error(error);
+        this.toastr.error(error.message);
         this.showAllCategory = false
       }
     )
